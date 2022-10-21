@@ -13,9 +13,10 @@ export default function Header() {
 
 	return (
 		<header>
+			<p className="bcc">Brisbane City Council</p>
 			<h1>Animal Complaints</h1>
-			<h2>Brisbane city council</h2>
-			<p>Total complaints: {totalRecords}</p>
+			<p className="total-complaints">Total: {totalRecords}</p>
+			{/* Complaints so far 1673 */}
 		</header>
 	);
 }

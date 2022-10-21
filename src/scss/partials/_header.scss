@@ -1,11 +1,24 @@
 header {
 	background: rgba($color2, 1);
 	color: #fff;
-	padding: 2rem 1rem;
+	padding: 0.5rem 1rem 1rem 1rem;
 	text-align: center;
 	h1,
 	h2,
 	p {
 		margin: 0;
+	}
+	.bcc {
+		background: $color1;
+		color: #fff;
+		font-size: 1rem;
+		margin: 0.5rem auto;
+		padding: 0.2rem 0.8rem;
+		width: fit-content;
+	}
+	.total-complaints {
+		font-size: 1.8rem;
+		font-weight: 300;
+		margin-top: 1rem;
 	}
 }

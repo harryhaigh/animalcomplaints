@@ -20,7 +20,7 @@ export default {
 	getSuburbs: () => {
 		return axios({
 			method: "get",
-			url: `https://postcodeapi.trawg.com/pc/4110`,
+			url: `https://www.data.brisbane.qld.gov.au/data/api/3/action/datastore_search?resource_id=65cb77d7-5795-48da-a37c-6aed4ee774ad&limit=5`,
 			headers: {
 				accept: "application/json",
 			},
@@ -33,3 +33,5 @@ export default {
 			});
 	},
 };
+
+// Aus post - "AUTH-KEY": "0ffztXoc6kKKbCoaKYK4oBAwwalxM1cn",

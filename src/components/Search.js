@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updatePostcode } from "../redux/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import api from "../api";
 
 export default function Search() {
@@ -41,7 +43,9 @@ export default function Search() {
 						onChange={(e) => handleChange(e)}
 					/>
 				</label>
-				<button type="submit">Search</button>
+				<button type="submit">
+					<FontAwesomeIcon icon={faMagnifyingGlass} />
+				</button>
 			</form>
 		</div>
 	);

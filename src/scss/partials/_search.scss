@@ -4,27 +4,31 @@
 	form {
 		align-items: center;
 		display: flex;
-		flex-direction: column;
+		flex-flow: row nowrap;
+		justify-content: center;
 		input.search-input {
 			border: none;
-			border-radius: 20px;
-			font-size: 2rem;
-			padding: 1rem;
+			border-radius: 10px 0 0 10px;
+			color: rgba($text, 0.8);
+			font-size: 3rem;
+			font-family: "Quicksand", sans-serif;
+			max-width: 30rem;
+			padding: 0 1rem;
 			text-align: center;
 		}
 		button[type="submit"] {
 			background: $color1;
 			border: 2px solid $color1;
-			border-radius: 10px;
+			border-radius: 0 10px 10px 0;
 			color: #fff;
 			cursor: pointer;
-			font-size: 1.6rem;
-			margin: 1rem 1rem 0 1rem;
-			padding: 0.5rem 2rem;
+			font-size: 2rem;
+			padding: 0.6rem 1rem;
 			&:hover,
 			&:focus {
-				background: #fff;
-				color: $color1;
+				background: $color2;
+				border: 2px solid $color2;
+				color: $text;
 			}
 		}
 	}
