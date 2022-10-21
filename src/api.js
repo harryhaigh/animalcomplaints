@@ -11,7 +11,7 @@ export default {
 			},
 		})
 			.then((response) => {
-				return response;
+				return response.data;
 			})
 			.catch((error) => {
 				return `Error: ${error}`;
