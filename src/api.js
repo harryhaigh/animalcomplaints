@@ -17,4 +17,19 @@ export default {
 				return `Error: ${error}`;
 			});
 	},
+	getSuburbs: () => {
+		return axios({
+			method: "get",
+			url: `https://postcodeapi.trawg.com/pc/4110`,
+			headers: {
+				accept: "application/json",
+			},
+		})
+			.then((response) => {
+				return response;
+			})
+			.catch((error) => {
+				return `Error: ${error}`;
+			});
+	},
 };

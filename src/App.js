@@ -5,6 +5,7 @@ import { updateData } from "./redux/data";
 import Header from "./components/Header";
 import "./scss/styles.scss";
 import CardContainer from "./components/CardContainer";
+import Search from "./components/Search";
 
 function App() {
 	const [data, setData] = useState(undefined);
@@ -21,6 +22,7 @@ function App() {
 		<div className="App">
 			<Header records={data !== undefined ? data.result.records.length : 0} />
 			<main>
+				<Search />
 				<CardContainer />
 			</main>
 		</div>

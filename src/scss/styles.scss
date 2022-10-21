@@ -1,4 +1,9 @@
 @import "partials/reset";
+@import "partials/color";
 @import "partials/typography";
 @import "partials/global";
+
+// Components
 @import "partials/header";
+@import "partials/search";
+@import "partials/cardContainer";

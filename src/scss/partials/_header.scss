@@ -1,4 +1,11 @@
 header {
-	background: #eee;
+	background: rgba($color2, 1);
+	color: #fff;
+	padding: 2rem 1rem;
 	text-align: center;
+	h1,
+	h2,
+	p {
+		margin: 0;
+	}
 }
