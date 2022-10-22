@@ -12,8 +12,25 @@ export default function Search() {
 	// Update store with selected Suburb name
 	const handleClick = (e) => {
 		e.preventDefault();
+		removeActiveButtonClass();
+		updateActiveButtonClass(e.target.id);
 		const suburbName = e.target.value.toUpperCase();
 		dispatch(updateSuburb(suburbName));
+	};
+
+	const removeActiveButtonClass = (id) => {
+		const activeButton = Array.from(
+			document.getElementsByClassName("suburb-button isActive")
+		);
+		if (activeButton.length > 0) {
+			activeButton.forEach((item) => {
+				item.classList.remove("isActive");
+			});
+		}
+	};
+
+	const updateActiveButtonClass = (id) => {
+		document.getElementById(id).classList.add("isActive");
 	};
 
 	// Check if postcode is valid on each input
@@ -31,7 +48,9 @@ export default function Search() {
 			suburbs &&
 				suburbs.map((suburb) => {
 					if (suburb.Postcode.toString() === postcode) {
-						suburbNames.push(suburb.Place);
+						return suburbNames.push(suburb.Place);
+					} else {
+						return null;
 					}
 				});
 			if (suburbNames.length === 0) {
@@ -62,21 +81,27 @@ export default function Search() {
 					/>
 				</label>
 			</form>
-			{suburbNotFound && <p className="not-found">Brisbane suburb not found</p>}
+			{suburbNotFound && (
+				<p className="not-found">Brisbane postcode not found</p>
+			)}
 			{suburbList.length > 0 && (
 				<div className="suburb-list-container">
-					{suburbList.map((item, index) => {
-						return (
-							<button
-								key={`suburb-${index}`}
-								className="suburb-button"
-								value={item}
-								onClick={(e) => handleClick(e)}
-							>
-								{item}
-							</button>
-						);
-					})}
+					<ul>
+						{suburbList.map((item, index) => {
+							return (
+								<li key={`suburb-${index}`}>
+									<button
+										id={`suburb-button-${index}`}
+										className="suburb-button"
+										value={item}
+										onClick={(e) => handleClick(e)}
+									>
+										{item}
+									</button>
+								</li>
+							);
+						})}
+					</ul>
 				</div>
 			)}
 		</div>

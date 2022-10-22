@@ -1,5 +1,5 @@
 #search-container {
-	background: #ccc;
+	background: #eee;
 	padding: 3rem 1rem;
 	text-align: center;
 	form {
@@ -17,6 +17,7 @@
 			max-width: 30rem;
 			padding: 0.5rem 1rem;
 			text-align: center;
+			@include box-shadow();
 		}
 	}
 	.not-found {
@@ -28,26 +29,40 @@
 		width: fit-content;
 	}
 	.suburb-list-container {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		margin: auto;
-		max-width: 850px;
-		padding: 1rem 1rem 0 1rem;
-		.suburb-button {
-			background: $color3;
-			border: 1px solid $color3;
-			border-radius: 20px;
-			font-size: 1.3rem;
-			color: #fff;
-			cursor: pointer;
-			margin: 1rem 1rem 0 1rem;
-			padding: 0.5rem 1rem;
-			transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-			&:hover,
-			&:focus {
-				background: #fff;
-				color: $color3;
+		ul {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			list-style: none;
+			margin: auto;
+			max-width: 850px;
+			padding: 1rem 1rem 0 1rem;
+			.suburb-button {
+				background: $color3;
+				border: 1px solid $color3;
+				border-radius: 20px;
+				font-size: 1.3rem;
+				color: #fff;
+				cursor: pointer;
+				margin: 1rem 1rem 0 1rem;
+				padding: 0.5rem 1rem;
+				transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+				@include box-shadow();
+				&:hover,
+				&:focus {
+					background: #fff;
+					color: $color3;
+				}
+			}
+			.suburb-button.isActive {
+				background: $color2;
+				border: 1px solid $color2;
+				color: $text;
+				&:hover,
+				&:focus {
+					background: #fff;
+					color: $text;
+				}
 			}
 		}
 	}

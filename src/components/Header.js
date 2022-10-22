@@ -15,7 +15,9 @@ export default function Header() {
 		<header>
 			<p className="bcc">Brisbane City Council</p>
 			<h1>Animal Complaints</h1>
-			<p className="total-complaints">Total: {totalRecords}</p>
+			<p className="total-complaints">
+				<span>Jul&ndash;Sep 2022</span> Total complaints: {totalRecords}
+			</p>
 			{/* Complaints so far 1673 */}
 		</header>
 	);

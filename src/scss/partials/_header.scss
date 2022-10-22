@@ -18,6 +18,7 @@ header {
 		margin: auto;
 		padding: 0.5rem 1rem;
 		width: fit-content;
+		@include box-shadow();
 	}
 	.bcc {
 		background: $color1;
@@ -30,10 +31,15 @@ header {
 	.total-complaints {
 		background: rgba(255, 255, 255, 0.5);
 		border-radius: 20px;
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		font-weight: 500;
 		margin: 2rem auto 0 auto;
 		padding: 0.5rem 1rem;
 		width: fit-content;
+		@include box-shadow();
+		span {
+			display: block;
+			font-size: 1.8rem;
+		}
 	}
 }

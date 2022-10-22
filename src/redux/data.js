@@ -9,8 +9,6 @@ export const dataSlice = createSlice({
 	},
 	reducers: {
 		updateData: (state, action) => {
-			console.log("Action");
-			console.log(action.payload);
 			state.data = action.payload;
 		},
 		updatePostcode: (state, action) => {
