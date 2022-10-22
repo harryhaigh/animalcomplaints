@@ -1,24 +1,39 @@
 header {
-	background: rgba($color2, 1);
+	background: url("../../images/mountains.png") no-repeat;
+	background-color: rgba($color2, 1);
+	background-size: cover;
+	background-position: center bottom;
 	color: #fff;
-	padding: 0.5rem 1rem 1rem 1rem;
+	padding: 0 0 1rem 0;
 	text-align: center;
 	h1,
 	h2,
 	p {
 		margin: 0;
 	}
+	h1 {
+		background: rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
+		font-weight: 500;
+		margin: auto;
+		padding: 0.5rem 1rem;
+		width: fit-content;
+	}
 	.bcc {
 		background: $color1;
 		color: #fff;
 		font-size: 1rem;
-		margin: 0.5rem auto;
+		margin: 0 auto 2rem auto;
 		padding: 0.2rem 0.8rem;
-		width: fit-content;
+		width: 100%;
 	}
 	.total-complaints {
+		background: rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
 		font-size: 1.8rem;
-		font-weight: 300;
-		margin-top: 1rem;
+		font-weight: 500;
+		margin: 2rem auto 0 auto;
+		padding: 0.5rem 1rem;
+		width: fit-content;
 	}
 }

@@ -1,6 +1,7 @@
 #search-container {
-	background: rgba($color2, 0.3);
+	background: #ccc;
 	padding: 3rem 1rem;
+	text-align: center;
 	form {
 		align-items: center;
 		display: flex;
@@ -8,27 +9,45 @@
 		justify-content: center;
 		input.search-input {
 			border: none;
-			border-radius: 10px 0 0 10px;
+			border: 2px solid $color3;
+			border-radius: 20px;
 			color: rgba($text, 0.8);
 			font-size: 3rem;
 			font-family: "Quicksand", sans-serif;
 			max-width: 30rem;
-			padding: 0 1rem;
+			padding: 0.5rem 1rem;
 			text-align: center;
 		}
-		button[type="submit"] {
-			background: $color1;
-			border: 2px solid $color1;
-			border-radius: 0 10px 10px 0;
+	}
+	.not-found {
+		background: $warning;
+		border-radius: 20px;
+		color: #fff;
+		margin: 2rem auto 0 auto;
+		padding: 0.2rem 1rem;
+		width: fit-content;
+	}
+	.suburb-list-container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		margin: auto;
+		max-width: 850px;
+		padding: 1rem 1rem 0 1rem;
+		.suburb-button {
+			background: $color3;
+			border: 1px solid $color3;
+			border-radius: 20px;
+			font-size: 1.3rem;
 			color: #fff;
 			cursor: pointer;
-			font-size: 2rem;
-			padding: 0.6rem 1rem;
+			margin: 1rem 1rem 0 1rem;
+			padding: 0.5rem 1rem;
+			transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 			&:hover,
 			&:focus {
-				background: $color2;
-				border: 2px solid $color2;
-				color: $text;
+				background: #fff;
+				color: $color3;
 			}
 		}
 	}

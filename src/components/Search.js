@@ -1,27 +1,45 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updatePostcode } from "../redux/data";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import api from "../api";
+import { updateSuburb } from "../redux/data";
+
+import suburbs from "../localfiles/suburbs.json";
 
 export default function Search() {
-	const [postcode, setPostcode] = useState("");
+	const [suburbList, setSuburbList] = useState([]);
+	const [suburbNotFound, setSuburbNotFound] = useState(false);
 	const dispatch = useDispatch();
 
-	const handleSubmit = (e) => {
+	// Update store with selected Suburb name
+	const handleClick = (e) => {
 		e.preventDefault();
-		dispatch(updatePostcode(postcode));
+		const suburbName = e.target.value.toUpperCase();
+		dispatch(updateSuburb(suburbName));
 	};
 
+	// Check if postcode is valid on each input
 	const handleChange = (e) => {
 		e.preventDefault();
-		console.log(isNumeric(e.target.value));
-		if (e.target.value.length === 4 && isNumeric(e.target.value)) {
-			console.log("Start showing suburbs");
-			console.log(api.getSuburbs());
+
+		setSuburbNotFound(false);
+		setSuburbList([]);
+		dispatch(updateSuburb(""));
+
+		const postcode = e.target.value;
+		let suburbNames = [];
+
+		if (postcode.length === 4 && isNumeric(postcode)) {
+			suburbs &&
+				suburbs.map((suburb) => {
+					if (suburb.Postcode.toString() === postcode) {
+						suburbNames.push(suburb.Place);
+					}
+				});
+			if (suburbNames.length === 0) {
+				setSuburbNotFound(true);
+			} else {
+				setSuburbList(suburbNames);
+			}
 		}
-		console.log(e.target.value.length);
 	};
 
 	// Return true if only numbers are inputted
@@ -30,8 +48,8 @@ export default function Search() {
 	};
 
 	return (
-		<div id="search-container">
-			<form onSubmit={handleSubmit}>
+		<div id="search-container" aria-live="polite">
+			<form>
 				<label aria-label="Enter postcode">
 					<input
 						className="search-input"
@@ -43,10 +61,24 @@ export default function Search() {
 						onChange={(e) => handleChange(e)}
 					/>
 				</label>
-				<button type="submit">
-					<FontAwesomeIcon icon={faMagnifyingGlass} />
-				</button>
 			</form>
+			{suburbNotFound && <p className="not-found">Brisbane suburb not found</p>}
+			{suburbList.length > 0 && (
+				<div className="suburb-list-container">
+					{suburbList.map((item, index) => {
+						return (
+							<button
+								key={`suburb-${index}`}
+								className="suburb-button"
+								value={item}
+								onClick={(e) => handleClick(e)}
+							>
+								{item}
+							</button>
+						);
+					})}
+				</div>
+			)}
 		</div>
 	);
 }
