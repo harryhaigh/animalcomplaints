@@ -2,7 +2,7 @@
 	background: #fff;
 	border: 1px solid $color2;
 	margin: 1rem 1.5rem;
-	max-width: 300px;
+	max-width: 320px;
 	padding: 0;
 	position: relative;
 	text-align: center;
@@ -21,11 +21,19 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		height: 100vh;
-		max-height: 250px;
-		//padding: 3rem 3rem;
+		max-height: 300px;
 		p {
 			font-size: 4rem;
 			margin: 0;
+		}
+		p.total-number {
+			align-items: center;
+			background: $color2;
+			border-radius: 50%;
+			display: flex;
+			height: 140px;
+			width: 140px;
+			justify-content: center;
 		}
 	}
 }
@@ -40,14 +48,33 @@
 			margin: 0;
 			list-style: none;
 			li {
-				border-bottom: 1px solid #ddd;
-				padding: 0.3rem 0 0.3rem 0;
+				display: flex;
+				justify-content: space-between;
+				padding: 0.5rem 0.6rem;
+				position: relative;
+				&:after {
+					background: #ddd;
+					bottom: 0;
+					content: "";
+					height: 2px;
+					left: 0;
+					position: absolute;
+					width: 100%;
+				}
 				&:hover {
 					background: rgba($color2, 0.2);
 				}
+				.not-found {
+					background: red;
+				}
+			}
+			.not-found {
+				background: rgba($warning, 0.1);
 			}
 			li:last-child {
-				border: none;
+				&:after {
+					display: none;
+				}
 			}
 		}
 	}

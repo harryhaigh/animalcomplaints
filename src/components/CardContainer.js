@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "./Card";
-import CategoryTypes from "./CategoryTypes";
+import ResultList from "./ResultList";
 
-export default function CardContainer({}) {
+export default function CardContainer() {
 	const { suburb, data } = useSelector((state) => state.data);
 	const [recordList, setRecordList] = useState([]);
 
@@ -14,18 +14,14 @@ export default function CardContainer({}) {
 			let tempArray = [];
 			data.result.records.map((item) => {
 				if (item["Location: Suburb"] === suburb) {
-					tempArray.push(item);
+					return tempArray.push(item);
+				} else {
+					return null;
 				}
 			});
 			setRecordList(tempArray);
 		}
 	}, [suburb, data]);
-
-	useEffect(() => {
-		// console.log("Record list");
-		// console.log(recordList);
-		// console.log(recordList.length);
-	}, [recordList]);
 
 	return (
 		<>
@@ -34,10 +30,16 @@ export default function CardContainer({}) {
 				{recordList.length > 0 && (
 					<>
 						<Card title="Total">
-							<p>{recordList.length}</p>
+							<p className="total-number">{recordList.length}</p>
 						</Card>
-						<Card title="Category types" style="category-type">
-							<CategoryTypes suburbList={recordList} />
+						<Card title="Category type" styles="category-type">
+							<ResultList suburbList={recordList} query="Category: Type" />
+						</Card>
+						<Card title="Reporting level" styles="category-type">
+							<ResultList
+								suburbList={recordList}
+								query="Category: Reporting Level"
+							/>
 						</Card>
 					</>
 				)}

@@ -20,7 +20,6 @@ export default function Header() {
 			<p className="total-complaints">
 				Total complaints: <span className="record-number">{totalRecords}</span>
 			</p>
-			{/* Complaints so far 1673 */}
 		</header>
 	);
 }

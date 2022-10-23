@@ -12,8 +12,10 @@ export default function Search() {
 	// Update store with selected Suburb name
 	const handleClick = (e) => {
 		e.preventDefault();
+
 		removeActiveButtonClass();
 		updateActiveButtonClass(e.target.id);
+
 		const suburbName = e.target.value.toUpperCase();
 		dispatch(updateSuburb(suburbName));
 	};

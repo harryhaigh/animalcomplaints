@@ -33,7 +33,7 @@ export default function DateRange() {
 			// 	newDateRange = "8b5eb983-2c99-4a72-8b1f-d757a3182bc5";
 			// 	break;
 			default:
-				newDateRange = "7b00dd2f-a73a-4674-8d50-4e77bded2dd4";
+				alert("Date range could not be found.");
 				break;
 		}
 

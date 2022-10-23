@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const dataSlice = createSlice({
-	name: "data",
+	name: "Animal-complaints-data",
 	initialState: {
 		postcode: "0000",
 		suburb: "",

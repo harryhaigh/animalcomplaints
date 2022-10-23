@@ -7,6 +7,7 @@ import "./scss/styles.scss";
 import DateRange from "./components/DateRange";
 import Search from "./components/Search";
 import CardContainer from "./components/CardContainer";
+import Footer from "./components/Footer";
 
 function App() {
 	const [data, setData] = useState(undefined);
@@ -22,6 +23,7 @@ function App() {
 			dispatch(updateData(result));
 		});
 	}, []);
+
 	return (
 		<div className="App">
 			<Header records={data !== undefined ? data.result.records.length : 0} />
