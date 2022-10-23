@@ -7,7 +7,6 @@ import "./scss/styles.scss";
 import DateRange from "./components/DateRange";
 import Search from "./components/Search";
 import CardContainer from "./components/CardContainer";
-import Footer from "./components/Footer";
 
 function App() {
 	const [data, setData] = useState(undefined);
