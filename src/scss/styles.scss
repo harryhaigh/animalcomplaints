@@ -1,4 +1,5 @@
 @import "partials/reset";
+@import "partials/breakpoints";
 @import "partials/color";
 @import "partials/typography";
 @import "partials/mixins";
@@ -6,6 +7,7 @@
 
 // Components
 @import "partials/header";
+@import "partials/dateRange";
 @import "partials/search";
 @import "partials/cardContainer";
 @import "partials/card";

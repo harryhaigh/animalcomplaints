@@ -1,5 +1,5 @@
 import api from "../api";
 
-export const getData = () => {
-	return api.getData();
+export const getData = (id) => {
+	return api.getData(id);
 };

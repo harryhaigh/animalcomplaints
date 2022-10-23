@@ -1,6 +1,6 @@
 #search-container {
 	background: #eee;
-	padding: 3rem 1rem;
+	padding: 2rem 1rem 3rem 1rem;
 	text-align: center;
 	form {
 		align-items: center;
@@ -12,11 +12,12 @@
 			border: 2px solid $color3;
 			border-radius: 20px;
 			color: rgba($text, 0.8);
-			font-size: 3rem;
+			font-size: 2rem;
 			font-family: "Quicksand", sans-serif;
 			max-width: 30rem;
 			padding: 0.5rem 1rem;
 			text-align: center;
+			width: 100%;
 			@include box-shadow();
 		}
 	}
@@ -63,6 +64,16 @@
 					background: #fff;
 					color: $text;
 				}
+			}
+		}
+	}
+}
+
+@include breakpoints(500px) {
+	#search-container {
+		form {
+			input.search-input {
+				font-size: 3rem;
 			}
 		}
 	}

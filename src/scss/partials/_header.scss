@@ -37,9 +37,11 @@ header {
 		padding: 0.5rem 1rem;
 		width: fit-content;
 		@include box-shadow();
-		span {
+		span.record-number {
+			color: $color1;
 			display: block;
-			font-size: 1.8rem;
+			font-size: 2rem;
+			text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 		}
 	}
 }
